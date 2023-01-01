@@ -15,8 +15,10 @@ class PostController extends Controller
         $post->update();
 
         $postsRelated = Post::orderBy('id', 'desc')
-            ->where('sub_category_id', $post->sub_category_id)
-            ->limit(3)->get();
+            ->where([
+                ['sub_category_id', $post->sub_category_id],
+                ['id', '!=', $id]])
+            ->limit(5)->get();
 
         $tags = TagPost::with('tag')->where('post_id', $id)->get();
 

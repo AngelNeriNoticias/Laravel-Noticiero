@@ -13,13 +13,14 @@
             <div class="small-box bg-info">
                 <div class="inner">
                     <h3>Nota + leída</h3>
-                    <p>{{ $mostViewedPost->title }}</p>
+                    <p>{{$mostViewedPost == null ? 'No hay nota publicada por el momento' : $mostViewedPost->title }}</p>
                 </div>
                 {{-- <div class="icon">
                     <i class="ion ion-newspaper-outline"></i>
                 </div> --}}
-                <a href="{{ route('detail', ['id' => $mostViewedPost->id]) }}" target="_blank"
-                    class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{$mostViewedPost == null ? '#' : route('detail', ['id' => $mostViewedPost->id]) }}"
+                    target="_blank" class="small-box-footer">Más información <i
+                        class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -28,12 +29,14 @@
             <div class="small-box bg-success">
                 <div class="inner">
                     <h3>Nota + leída/mes</h3>
-                    <p>{{ $mostViewedPostThisMonth->title }}</p>
+                    <p>{{$mostViewedPostThisMonth== null? 'No hay nota publicada' : $mostViewedPostThisMonth->title }}</p>
                 </div>
                 <div class="icon">
                     {{-- <i class="ion ion-briefcase"></i> --}}
                 </div>
-                <a href="{{ route('detail', ['id' => $mostViewedPostThisMonth->id]) }}" target="_blank" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{$mostViewedPostThisMonth== null ? '#' : route('detail', ['id' => $mostViewedPostThisMonth->id]) }}"
+                    target="_blank" class="small-box-footer">Más información <i
+                        class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -47,7 +50,8 @@
                 <div class="icon">
                     {{-- <i class="ion ion-document"></i> --}}
                 </div>
-                <a href="{{ route('admin.post') }}" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ route('admin.post') }}" class="small-box-footer">Más información <i
+                        class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -61,7 +65,8 @@
                 <div class="icon">
                     {{-- <i class="ion ion-pie-graph"></i> --}}
                 </div>
-                <a href="{{ route('admin.post') }}" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ route('admin.post') }}" class="small-box-footer">Más información <i
+                        class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -78,7 +83,8 @@
                 <div class="icon">
                     {{-- <i class="ion ion-plus"></i> --}}
                 </div>
-                <a href="{{ route('admin.post') }}" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ route('admin.post') }}" class="small-box-footer">Más información <i
+                        class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -92,7 +98,8 @@
                 <div class="icon">
                     {{-- <i class="ion ion-checkmark"></i> --}}
                 </div>
-                <a href="{{ route('admin.post') }}" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ route('admin.post') }}" class="small-box-footer">Más información <i
+                        class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -106,7 +113,8 @@
                 <div class="icon">
                     {{-- <i class="ion ion-ios-book"></i> --}}
                 </div>
-                <a href="{{ route('admin.post') }}" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ route('admin.post') }}" class="small-box-footer">Más información <i
+                        class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -120,7 +128,8 @@
                 <div class="icon">
                     {{-- <i class="ion ion-sad"></i> --}}
                 </div>
-                <a href="{{ route('admin.post') }}" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ route('admin.post') }}" class="small-box-footer">Más información <i
+                        class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->

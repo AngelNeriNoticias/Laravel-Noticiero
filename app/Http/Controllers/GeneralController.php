@@ -17,9 +17,12 @@ class GeneralController extends Controller
         App::setLocale('es');
         $data['featuredPosts'] = Post::with('author')->orderBy('id', 'desc')->limit(10)->get();
 
-        $data['tickers'] = Ticker::orderBy('order', 'asc')->get();
+        $data['tickers'] = Ticker::where('show', true)->orderBy('order', 'asc')->get();
         $data['subcategories'] = SubCategory::orderBy('order', 'asc')
-            ->where('show_menu', true)
+            ->where([
+                ['show_menu', true],
+                ['show', true]
+                ])
             ->with('posts')
             ->limit(4)
             ->get();

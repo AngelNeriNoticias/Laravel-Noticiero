@@ -52,7 +52,7 @@
 
 
                     @else
-                    <div class="fb-video" data-href="{{ $advice->url }}" data-width="302" data-height="226"
+                    <div class="fb-video g" data-href="{{ $advice->url }}" data-width="302" data-height="226"
                         data-show-text="false">
                     </div>
                     <div class="video-caption">

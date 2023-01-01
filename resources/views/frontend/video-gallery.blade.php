@@ -24,7 +24,7 @@
 
                 @foreach($videos as $video)
                 <div class="col-lg-3 col-md-4">
-                    <div class="fb-video" data-href="{{ $video->video }}"
+                    <div class="fb-video g" data-href="{{ $video->video }}"
                         data-width="302" data-height="226" data-show-text="false">
                     </div>
                     <div class="video-caption">

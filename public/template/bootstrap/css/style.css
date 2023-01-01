@@ -377,9 +377,17 @@ a:hover {
 
 .sub-category-body {
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    max-height: 223px !important;
+    line-break: after-white-space;
+}
+
+@media screen and (max-width: 768px) {
+    .sub-category-body {
+        max-height: 75px !important;
+    }
 }
 
 /* Advertisement */

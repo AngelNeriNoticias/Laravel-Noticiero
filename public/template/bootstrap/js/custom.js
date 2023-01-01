@@ -46,11 +46,8 @@ $(document).ready(function () {
 
     //add to class fb-video active when screen is mobile
     if ($(window).width() < 768) {
-        $(".fb-video").attr("data-width", "auto");
-        $(".fb-video").attr("data-height", "auto");
-       
-    } else {
-        
+        $(".fb-video.g").attr("data-width", "auto");
+        $(".fb-video.g").attr("data-height", "auto");
     }
 
     $('.magnific').magnificPopup({

@@ -91,7 +91,7 @@
                         </div>
 
 
-                        <div class="form-group col-12">
+                        {{-- <div class="form-group col-12">
                             <label for="url">Url a video de youtube</label>
                             <input id="url" wire:model.defer="state.url" type="text"
                                 class="form-control @error('url') is-invalid @enderror"
@@ -101,7 +101,7 @@
                                 {{ $message }}
                             </div>
                             @enderror
-                        </div>
+                        </div> --}}
 
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="form-group">

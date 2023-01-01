@@ -167,14 +167,14 @@ break;
                                 <p>Redes Sociales</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="{{ route('admin.poll') }}"
                                 class="nav-link {!! $routeName == 'admin.poll' ? 'active' : '' !!}">
                                 <i class="far nav-icon 
                                 {!! $routeName == 'admin.poll' ? 'fa-dot-circle' : 'fa-circle' !!} "></i>
                                 <p>Encuestas</p>
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
 

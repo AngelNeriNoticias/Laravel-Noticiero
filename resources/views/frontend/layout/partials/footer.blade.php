@@ -1,5 +1,5 @@
 <footer class="footer">
-    <div class="container d-flex flex-wrap">
+    <div class="container d-flex flex-wrap w-100 justify-content-center">
         <div class="row d-flex justify-content-between w-100">
             <div class="col-md-4">
                 <div class="item">
@@ -59,14 +59,14 @@
                             negocios@angelneri.com
                         </div>
                     </div>
-                    <div class="list-item">
+                    {{-- <div class="list-item">
                         <div class="left">
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <div class="right">
-                            {{-- 639-157-0909 --}}
+                            639-157-0909
                         </div>
-                    </div>
+                    </div> --}}
                     {{-- <ul class="social">
                         @if(count($socialMedia) > 0)
                         @foreach ($socialMedia as $social)
@@ -80,22 +80,6 @@
                     </ul> --}}
                 </div>
             </div>
-            {{-- <div class="col-md-3">
-                <div class="item">
-                    <h2 class="heading">{{ __('Newsletter') }}</h2>
-                    <p>
-                        In order to get the latest news and other great items, please subscribe us here:
-                    </p>
-                    <form action="" method="post">
-                        <div class="form-group">
-                            <input type="text" name="" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" class="btn btn-primary" value="Subscribe Now">
-                        </div>
-                    </form>
-                </div>
-            </div> --}}
         </div>
         <div class="row w-100 text-center d-flex justify-content-center my-2 pt-5">
             Copyright 2022, Ángel Neri Noticias. {{ __('All Rights Reserved') }}.

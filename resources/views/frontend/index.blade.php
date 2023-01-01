@@ -348,18 +348,18 @@
 
         <div class="row">
             <div class="col-md-12">
-                <div class="video-carousel owl-carousel">
+                <div class="video-carousel owl-carousel text-center">
                     @foreach ($videos as $video)
-                    <div class="item">
+                    <div class="item d-flex justify-content-center flex-wrap">
                         <div class="fb-video" data-href="{{ $video->video }}" data-width="302" data-height="226"
                             data-show-text="false">
                         </div>
                         <div class="video-caption">
-                            <a target="_blank" href="{{ 'http://www.youtube.com/watch?v=' . $video->video }}">
+                            <a target="_blank" href="{{ $video->video }}">
                                 {{ $video->caption }}
                             </a>
                         </div>
-                        <div class="video-date">
+                        <div class="video-date w-100">
                             <i class="fas fa-calendar-alt"></i> {{ $video->updated_at->format('d/m/Y') }}
                         </div>
                     </div>

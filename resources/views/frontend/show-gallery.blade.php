@@ -12,7 +12,8 @@
                             artísticos</a>
                     </span>
                     <br>
-                    <span>Correo de negocios: <a href="mailto:espectaculosadn@gmail.com">espectaculosadn@gmail.com</a></span><br>
+                    <span>Correo de negocios: <a
+                            href="mailto:espectaculosadn@gmail.com">espectaculosadn@gmail.com</a></span><br>
                     <span>Teléfono de negocios: 6391570909</span>
                 </p>
                 <nav class="breadcrumb-container">
@@ -51,21 +52,19 @@
 
 
                     @else
-                    <div class="fb-video" data-href="{{ $advice->url }}" data-width="700" data-height="500"
+                    <div class="fb-video" data-href="{{ $advice->url }}" data-width="302" data-height="226"
                         data-show-text="false">
                     </div>
                     <div class="video-caption">
                         <a title="{{ $advice->caption }}" href="{{ $advice->url }}" target="_blank">{{ $advice->caption
                             }}</a>
                     </div>
-                    <div class="video-date">
+                    <div class="video-date" style="padding-bottom: 8px;">
                         <i class="fas fa-calendar-alt"></i> {{ $advice->updated_at->format('d/m/Y') }}
                     </div>
                     @endif
                 </div>
                 @endforeach
-
-
 
                 <div class="col-md-12">
                     {{ $advices->links() }}

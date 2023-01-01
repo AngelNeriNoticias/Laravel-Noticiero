@@ -203,6 +203,12 @@
                     $(`#${event.detail.id}`).val(null).trigger("change");
                 })
 
+                window.addEventListener('setSelect2', event => {
+                    const array = event.detail.array;
+                    $(`#${event.detail.key}`).val(array);
+                    $(`#${event.detail.key}`).trigger('change');
+                });
+
                 window.addEventListener('setBody', event => {
                     $(`#${event.detail.key}`).summernote('code', event.detail.body);
                 });

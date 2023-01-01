@@ -20,7 +20,7 @@
                 @foreach ($globalTags as $tag)
                 <div class="tag-item">
                     <a href="{{ route('tag', ['id' => $tag->id]) }}">
-                        <span class="badge bg-secondary">{{ $tag->name }}</span>
+                        <span class="badge bg-tag">{{ $tag->name }}</span>
                     </a>
                 </div>
                 @endforeach

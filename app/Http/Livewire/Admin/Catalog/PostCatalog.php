@@ -98,6 +98,15 @@ class PostCatalog extends Component
         ]);
     }
 
+    public function validateTags($id){
+        $tags = TagPost::where('post_id', $id)->get();
+        if(count($tags) > 0){
+            foreach ($tags as $tag) {
+                $tag->delete();
+            }
+        }
+    }
+
     public function save()
     {
         $idValidator = array_key_exists('id', $this->state) ? $this->state['id'] : '';
@@ -115,15 +124,15 @@ class PostCatalog extends Component
         $validateData['share'] = $this->state['share'];
 
         $post = Post::updateOrCreate(['id' => $idValidator], $validateData);
-
+        
+        $this->validateTags($post->id);
         foreach ($this->tagsSelected as $tag) {
-            TagPost::updateOrCreate(['post_id' => $post->id, 'tag_id' => $tag]);
+            TagPost::create(['post_id' => $post->id, 'tag_id' => $tag]);
         }
 
         $this->tab = 'pills-table';
         $this->sendMessage($idValidator ? 'actualizado' : 'creado');
         $this->clean();
-        
         return redirect()->route('admin.post');
     }
 
@@ -138,7 +147,17 @@ class PostCatalog extends Component
             "body" => $this->state['body']
         ]);
         $this->tab = 'pills-post';
-        // $this->launchModal();
+        $tags = TagPost::where('post_id', $id)->get();
+        //create a new array with the tags selected
+        $tagsSelected = array();
+        foreach ($tags as $tag) {
+            $this->addTag($tag->tag_id);
+            array_push($tagsSelected, $tag->tag_id);
+        }
+        $this->dispatchBrowserEvent('setSelect2', [
+            'key' => 'tagsSelected',
+            "array" => $tagsSelected
+        ]);
     }
 
     public function callConfirmationPost($id)

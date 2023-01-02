@@ -54,17 +54,23 @@ class ShowCatalog extends Component
 
     public function save()
     {
-        if($this->image != null && $this->state['type_id'] == 1){
+        if ($this->image != null && $this->state['type_id'] == 1) {
             $this->validateImage();
         }
         $idValidator = array_key_exists('id', $this->state) ? $this->state['id'] : '';
-
+        if ($idValidator) {
+            $oldShow = ModelHelper::findModel(Show::class, $idValidator);
+            if ($oldShow->type_id == 1 && $this->state['type_id'] != 1) {
+                $destinationPath = public_path();
+                File::delete($destinationPath . '/storage/advice/' . $oldShow->photo);
+            }
+        }
         $validateData = Validator::make(
             $this->state,
             $this->rules(),
             $this->messages()
         )->validate();
-    
+
         Show::updateOrCreate(['id' => $idValidator], $validateData);
         $this->launchModal();
         $this->sendMessage($idValidator ? 'actualizado' : 'creado');
@@ -90,7 +96,12 @@ class ShowCatalog extends Component
 
     public function deleteShow(int $id)
     {
-        ModelHelper::delete(Show::class, $id);
+        $show = ModelHelper::findModel(Show::class, $id);
+        if ($show->type_id == 1) {
+            $destinationPath = public_path();
+            File::delete($destinationPath . '/storage/advice/' . $show->photo);
+        }
+        $show->delete();
         $this->sendMessage('eliminado');
     }
 
@@ -130,5 +141,5 @@ class ShowCatalog extends Component
             'url.required' => GlobalFunctions::requiredMessage('enlace'),
             'type_id.required' => GlobalFunctions::requiredMessage('tipo de anuncio'),
         ];
-    } 
+    }
 }

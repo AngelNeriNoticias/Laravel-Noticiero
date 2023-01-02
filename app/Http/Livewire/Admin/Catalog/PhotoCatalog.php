@@ -87,7 +87,10 @@ class PhotoCatalog extends Component
 
     public function deletePhoto(int $id)
     {
-        ModelHelper::delete(Photo::class, $id);
+        $photo = ModelHelper::findModel(Photo::class, $id);
+        $destinationPath = public_path();
+        File::delete($destinationPath . '/storage/gallery/' . $photo->photo);
+        $photo->delete();
         $this->sendMessage('eliminado');
     }
 

@@ -376,10 +376,11 @@
 @endif
 
 @if ($footerAd)
-<div class="my-lg-4 my-sm-2">
+
+<div class="ad-section-2 my-4">
     <div class="container h-100">
-        <div class="row h-100 d-flex justify-content-center flex-wrap">
-            <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="row h-100 d-flex justify-content-center">
+            <div class="col-lg-12 col-md-12 col-sm-12 h-100 mb-3 mb-sm-3 w-100 p-0">
                 <a href="{{ $footerAd->url }}" target="_blank" title="Anuncio">
                     <img class="img-fluid" src="{{ asset('storage/ads/'. $footerAd->ad) }}" alt="">
                 </a>

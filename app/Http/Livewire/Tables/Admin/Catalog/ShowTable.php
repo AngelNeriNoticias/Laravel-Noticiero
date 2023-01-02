@@ -73,8 +73,8 @@ class ShowTable extends LivewireDatatable
             Column::callback(['id'], function ($id) {
                 return view('table-actions.actions', [
                     'id' => $id,
-                    'edit' => 'editPhoto',
-                    'delete' => 'callConfirmationPhoto'
+                    'edit' => 'editShow',
+                    'delete' => 'callConfirmationShow'
                 ]);
             })
                 ->label('Acciones')

@@ -172,7 +172,10 @@ class PostCatalog extends Component
 
     public function deletePost(int $id)
     {
-        ModelHelper::delete(Post::class, $id);
+        $post = ModelHelper::findModel(Post::class, $id);
+        $destinationPath = public_path();
+        File::delete($destinationPath . '/storage/posts/' . $post['photo']);
+        $post->delete();
         $this->sendMessage('eliminada');
     }
 

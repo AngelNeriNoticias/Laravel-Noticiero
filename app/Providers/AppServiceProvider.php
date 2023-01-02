@@ -94,7 +94,7 @@ class AppServiceProvider extends ServiceProvider
         $this->getWeatherService();
         $this->getAds();
 
-        $categories = Category::orderBy('order', 'asc')->with('subCategories')->get();
+        $categories = Category::where('show', true)->orderBy('order', 'asc')->with('subCategories')->get();
         $globalTags = Tag::orderBy('id', 'asc')->limit(10)->get();
         $recentPosts = Post::orderBy('id', 'desc')->limit(5)->get();
         $popularPosts = Post::orderBy('visitors', 'desc')->limit(5)->get();

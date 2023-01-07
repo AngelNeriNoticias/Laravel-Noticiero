@@ -530,7 +530,7 @@ a:hover {
 }
 @media (max-width: 575px) {
     .home-main .inner .photo img {
-        object-fit: unset;
+        object-fit: cover;
         height: auto;
     }
 }

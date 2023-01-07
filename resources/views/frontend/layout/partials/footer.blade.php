@@ -82,7 +82,7 @@
             </div>
         </div>
         <div class="row w-100 text-center d-flex justify-content-center my-2 pt-5">
-            Copyright 2022, Ángel Neri Noticias. {{ __('All Rights Reserved') }}.
+            Copyright {{ date('Y') }}, Ángel Neri Noticias. {{ __('All Rights Reserved') }}.
         </div>
     </div>
 </footer>

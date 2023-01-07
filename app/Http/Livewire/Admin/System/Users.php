@@ -12,7 +12,7 @@ class Users extends Component
 {
     protected $listeners = ['editUser', 'deleteUser', 'callConfirmationUser'];
     public $modal = false;
-    public $state = ['role' => 0];
+    public $state = ['role' => ''];
 
     public function render()
     {

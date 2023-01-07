@@ -177,7 +177,7 @@ break;
                         </li> --}}
                     </ul>
                 </li>
-
+                @endif
                 <li class="nav-item {!! openMenu('administrador/noticias') !!}">
                     <a href="#" class="nav-link {!! $segments[1] == 'noticias' ? 'active' : '' !!}">
                         <i class="nav-icon fas fa-newspaper"></i>
@@ -205,8 +205,8 @@ break;
                         </li>
                     </ul>
                 </li>
-                @endif
                 
+                @if (Auth::user()->role != 0)
                 <li class="nav-item {!! openMenu('administrador/paginas') !!}">
                     <a href="#" class="nav-link {!! $segments[1] == 'paginas' ? 'active' : '' !!}">
                         <i class="nav-icon fas fa-pager"></i>
@@ -234,7 +234,7 @@ break;
                         </li>
                     </ul>
                 </li>
-
+                @endif
                 <li class="nav-item">
                     <a href="{{ route('admin.profile') }}"
                         class="nav-link {{ $routeName == 'admin.profile' ? 'active' : '' }}">
